@@ -17,6 +17,7 @@ const mgsOne = document.querySelector('.msg-1');
 const mgsTwo = document.querySelector('.msg-2');
 const btnUpdate = document.querySelector('.update-btn');
 
+const form = document.querySelector('#form');
 
 // adding event listener to HTML Element 
 btnCreate.addEventListener('click', () => {
@@ -36,37 +37,38 @@ const appStorage = JSON.parse(localStorage.getItem('to-do-app') || '[]');
 
 // form validation
 let formValidation = () => {
-    var checkOne = 0, checkTwo = 0;
-    if (inputTask.value == "") {
-        console.log("Task cannot be blank");
+    if (inputTask.value==='' && inputDueDate.value === '' ) {
         mgsOne.innerHTML = 'Task cannot be blank';
-        checkOne = 0;
-    } else {
-        console.log(inputTask.value);
-        mgsOne.innerHTML = "";
-        checkOne = 1;
-
-    }
-    if (inputDueDate.value == '') {
+        mgsTwo.innerHTML = 'Date cannot be blank';
+        console.log("missing");
+        form.style.height='auto';
+    } 
+    else if(inputTask.value!=='' && inputDueDate.value === ''){
         console.log("Date cannot be blank");
         mgsTwo.innerHTML = 'Date cannot be blank';
-        checkTwo = 0;
-    } else {
-        console.log(inputDueDate.value);
-        mgsTwo.innerHTML = "";
-        checkTwo = 1;
+        mgsOne.innerHTML='';
+        form.style.height='auto';
     }
-    if (checkOne == checkTwo == 1) {
-        console.log("both are given");
+    else if(inputTask.value==='' && inputDueDate.value !== ''){
+        console.log("Task cannot be blank");
+        mgsOne.innerHTML = 'Task cannot be blank';
+        mgsTwo.innerHTML='';
+        form.style.height='auto';
+    }
+    else if(inputTask.value!=='' && inputDueDate.value!==''){
         modal.classList.remove('active');
+        console.log(inputTask.value);
         acceptData();
-    } else {
-        console.log("missing");
+        resetForm();
+    }
+    else{
+        console.log("error");
     }
 };
 
 // accept data and store local storage
 let acceptData = () => {
+    console.log(inputTask.value);
     const taskObj = {
         title: inputTask.value,
         dueDate: inputDueDate.value,
@@ -79,6 +81,7 @@ let acceptData = () => {
 
     console.log(appStorage);
     createTask();
+    resetForm();
 };
 
 // create Dynamic DOM elements
@@ -88,7 +91,7 @@ let createTask = () => {
 
     appStorage.map((x, y, z) => {
         console.log(x, y, z);
-        console.log(tasksContainer.innerHTML);
+        // console.log(tasksContainer.innerHTML);
         return (tasksContainer.innerHTML = tasksContainer.innerHTML + `
             <div class="task" id=${y}>
                 <div class="task_title">
@@ -115,6 +118,8 @@ let resetForm = () => {
     inputTask.value = '';
     inputDueDate.value = '';
     inputDescription.value = '';
+    mgsOne.innerHTML='';
+    mgsTwo.innerHTML='';
 }
 createTask();
 
