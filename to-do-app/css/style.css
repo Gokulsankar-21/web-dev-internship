@@ -378,7 +378,8 @@ body {
 
     #to-do-app {
         width: 300px;
-        height: auto;
+        min-height: 600px;
+        overflow: none;
     }
 
     #modal {
