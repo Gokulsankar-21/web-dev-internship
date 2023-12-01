@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>javascript project - to do app</title>
+    <!-- Font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div id="container">
+        <!-- to do app -->
+        <div id="to-do-app">
+            <h1 class="main-title">To Do App</h1>
+            <div id="create-task">
+                <p>create new task</p>
+                <span id="create">
+                    <i class="fa-solid fa-plus"></i>
+                </span>
+            </div>
+            <div id="tasks">
+                <h2>Tasks</h2>
+                <div id="task-list">
+                    <!-- here will be dynamic HTML Element  -->
+                </div>
+            </div>
+
+            <!-- Modal Form -->
+            <div id="modal">
+                <form id="form">
+                    <div id="form_header">
+                        <h1>Create new task</h1>
+                        <i class="fa-solid fa-xmark btn-close"></i>
+                    </div>
+                    <div class="task-title flex-col">
+                        <label for="input-task">Title</label>
+                        <input type="text" id="input-task" required>
+                        <div class="msg-1"></div>
+                    </div>
+                    <div class="task-due-date flex-col">
+                        <label for="input-due-date">Due date</label>
+                        <input type="date" id="input-due-date" required>
+                        <div class="msg-2"></div>
+                    </div>
+                    <div class="task-description flex-col">
+                        <label for="input-description">Description</label>
+                        <textarea id="input-description" placeholder="your notes"></textarea>
+                    </div>
+                    <div class="buttons ">
+                        <input type="button" class="cancel-btn" value="cancel">
+                        <input type="button" class="add-btn" value="add">
+                        <input type="button" class="update-btn" value="update">
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Javascript -->
+        <script src="./js/script.js"></script>
+        <script src="./js/check.js"></script>
+</body>
+
+</html>
