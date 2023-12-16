@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz App - Task 3</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- Start Button -->
+    <div class="start_btn">
+        <button>Start</button>
+    </div>
+
+    <!-- Information Box -->
+    <div id="info_box">
+        <div class="info_title">Some Rules of this Quiz</div>
+        <div class="info_rules">
+            <span>1. You will have only <p>15 seconds</p> per each question.</span>
+            <span>2. Once you select your answer, it can't be undone.</span>
+            <span>3. You can't select any option once time goes off.</span>
+            <span>4. You can't exit from the Quiz while you playing.</span>
+            <span>5. You'll get points on the basis of your correct answer.</span>
+        </div>
+        <div class="buttons">
+            <button class="quit">Exit Quiz</button>
+            <button class="continue">Continue</button>
+        </div>
+    </div>
+
+    <!-- Question Box -->
+    <div id="quiz_box">
+        <header>
+            <div class="quiz_title">Awesome Quiz Application</div>
+            <div class="timer">
+                <div class="time_text">Time Left</div>
+                <div class="time"></div>
+            </div>
+            <div class="indicator"></div>
+        </header>
+
+        <section>
+            <div class="que_text">
+                <!-- <span>1.What does HTML stand for?</span> -->
+            </div>
+            <div class="option_list">
+                <!-- Here Questions and Answer will be Added Dynamically -->
+
+                <!-- <div class="option">
+                    <span>Hyper Text Preprocessor</span>
+                    <div class="icon tick"><i class="fa-solid fa-check"></i></div>
+                </div>
+            <div class="option">
+                    <span>Hyper Text Markup Language</span>
+                    <div class="icon cross"><i class="fa-solid fa-xmark"></i></div>
+                </div>
+                <div class="option">
+                    <span>Hyper Text Multiple Language</span>
+                </div>
+                <div class="option">
+                    <span>Hyper Tool Multi Language</span>
+                </div> -->
+            </div>
+        </section>
+
+        <footer>
+            <div class="que_status">
+                <!-- <p>2</p>of <p>5</p>Questions -->
+            </div>
+            <button class="next_btn">Next Quiz</button>
+        </footer>
+    </div>
+
+    <!-- Result Box -->
+    <div id="result_box">
+        <div class="crown_icon">
+            <i class="fa-solid fa-crown"></i>
+        </div>
+        <div class="complete_text">
+            You've completed the Quiz!
+        </div>
+        <div class="score_text">
+            <!-- <span> and sorry, You got only <p>2</p>out of <p>5</p></span> -->
+        </div>
+        <div class="buttons">
+            <button class="restart">Replay Quiz</button>
+            <button class="quit">Exit Quiz</button>
+        </div>
+    </div>
+
+    <!-- Font Awesome CDN -->
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js"></script>
+
+    <!-- JavaScript -->
+    <script type="text/javascript" src="./js/question.js"></script>
+    <script type="text/javascript" src="js/script.js"></script>
+
+</body>
+
+</html>
