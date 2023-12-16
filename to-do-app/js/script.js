@@ -37,31 +37,31 @@ const appStorage = JSON.parse(localStorage.getItem('to-do-app') || '[]');
 
 // form validation
 let formValidation = () => {
-    if (inputTask.value==='' && inputDueDate.value === '' ) {
+    if (inputTask.value === '' && inputDueDate.value === '') {
         mgsOne.innerHTML = 'Task cannot be blank';
         mgsTwo.innerHTML = 'Date cannot be blank';
         console.log("missing");
-        form.style.height='auto';
-    } 
-    else if(inputTask.value!=='' && inputDueDate.value === ''){
+        form.style.height = 'auto';
+    }
+    else if (inputTask.value !== '' && inputDueDate.value === '') {
         console.log("Date cannot be blank");
         mgsTwo.innerHTML = 'Date cannot be blank';
-        mgsOne.innerHTML='';
-        form.style.height='auto';
+        mgsOne.innerHTML = '';
+        form.style.height = 'auto';
     }
-    else if(inputTask.value==='' && inputDueDate.value !== ''){
+    else if (inputTask.value === '' && inputDueDate.value !== '') {
         console.log("Task cannot be blank");
         mgsOne.innerHTML = 'Task cannot be blank';
-        mgsTwo.innerHTML='';
-        form.style.height='auto';
+        mgsTwo.innerHTML = '';
+        form.style.height = 'auto';
     }
-    else if(inputTask.value!=='' && inputDueDate.value!==''){
+    else if (inputTask.value !== '' && inputDueDate.value !== '') {
         modal.classList.remove('active');
         console.log(inputTask.value);
         acceptData();
         resetForm();
     }
-    else{
+    else {
         console.log("error");
     }
 };
@@ -118,8 +118,8 @@ let resetForm = () => {
     inputTask.value = '';
     inputDueDate.value = '';
     inputDescription.value = '';
-    mgsOne.innerHTML='';
-    mgsTwo.innerHTML='';
+    mgsOne.innerHTML = '';
+    mgsTwo.innerHTML = '';
 }
 createTask();
 
