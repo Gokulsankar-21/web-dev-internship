@@ -51,9 +51,10 @@ nextBtn.onclick = () => {
         nextBtn.style.display = 'none';
     }
     else {
+        indicator.style.width=0+'px';
         resultBox.classList.add('activeResult');
         quizBox.classList.remove('activeQuiz');
-
+        console.log('check');
         if (score > 3) {
             let scoreTag = '<span> and Great 😎, You got <p>' + score + '</p>out of <p>' + queArray.length + '</p></span>';
             scorTextElement.innerHTML = scoreTag;
@@ -83,7 +84,7 @@ restartBtn.onclick = () => {
 }
 
 // Reset Values
-function reset() {
+function reset() {-
     clearInterval(counterTime);
     showTimer(timeValue);
     clearInterval(counterLine);
