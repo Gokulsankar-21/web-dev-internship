@@ -53,7 +53,7 @@ nextBtn.onclick = () => {
     else {
         resultBox.classList.add('activeResult');
         quizBox.classList.remove('activeQuiz');
-
+        indicator.style.width = 0 + 'px';
         if (score > 3) {
             let scoreTag = '<span> and Great 😎, You got <p>' + score + '</p>out of <p>' + queArray.length + '</p></span>';
             scorTextElement.innerHTML = scoreTag;
